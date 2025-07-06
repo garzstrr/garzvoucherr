@@ -3,47 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GarzVoucher - Top Up Game & Voucher</title>
+    <title>GarzVoucher - Top Up Game & Voucher Terpercaya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #8A2BE2;
-            --primary-dark: #6A1B9A;
-            --secondary: #FF9800;
-            --light: #F3E5F5;
-            --dark: #4A148C;
-            --text: #333;
-            --background: #FFFFFF;
-            --card-bg: #FFFFFF;
-            --card-shadow: rgba(138, 43, 226, 0.1);
+            --primary-blue: #1a73e8;
+            --dark-blue: #0d47a1;
+            --light-blue: #4285f4;
+            --accent-orange: #ff6d00;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #F9F5FF;
-            color: var(--text);
+            background-color: #f0f7ff;
+            color: var(--dark-gray);
             line-height: 1.6;
         }
         
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header Styles */
+        /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -53,18 +47,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: bold;
         }
         
         .logo i {
             margin-right: 10px;
-            color: var(--secondary);
+            color: var(--accent-orange);
         }
         
         nav ul {
@@ -77,19 +73,12 @@
         }
         
         nav ul li a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
             padding: 8px 15px;
-            border-radius: 20px;
+            border-radius: 5px;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-        
-        nav ul li a i {
-            margin-right: 8px;
-            font-size: 18px;
         }
         
         nav ul li a:hover, 
@@ -102,292 +91,340 @@
             align-items: center;
         }
         
-        .login-btn, .register-btn {
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 500;
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
             cursor: pointer;
+            font-weight: 600;
             transition: all 0.3s ease;
-            margin-left: 10px;
-        }
-        
-        .login-btn {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .register-btn {
-            background-color: var(--secondary);
-            border: 2px solid var(--secondary);
-            color: white;
-        }
-        
-        .login-btn:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .register-btn:hover {
-            background-color: #E68A00;
-            border-color: #E68A00;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            border-radius: 0 0 30px 30px;
-            margin-bottom: 40px;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .services {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .service-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px 20px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 10px 20px var(--card-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            color: var(--dark);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
-        }
-        
-        .service-card i {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Games Section */
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--dark);
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        
-        .games-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-        
-        .game-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px var(--card-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
             text-align: center;
         }
         
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.25);
+        .btn-login {
+            background-color: var(--accent-orange);
+            color: var(--white);
+            margin-right: 10px;
         }
         
-        .game-card img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-bottom: 2px solid var(--primary);
-        }
-        
-        .game-card h3 {
-            padding: 15px 5px;
-            font-size: 0.9rem;
-            color: var(--dark);
-        }
-        
-        /* Free Fire Diamonds */
-        .diamonds-section {
-            background: linear-gradient(135deg, var(--light), #ffffff);
-            padding: 40px 0;
-            border-radius: 20px;
-            margin-bottom: 60px;
-            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.1);
-        }
-        
-        .diamonds-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .diamond-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px var(--card-shadow);
-            border: 2px solid var(--light);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .diamond-card:hover {
-            border-color: var(--primary);
-            transform: scale(1.03);
-        }
-        
-        .diamond-card i {
-            font-size: 40px;
-            color: #1E90FF;
-            margin-bottom: 15px;
-        }
-        
-        .diamond-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-        
-        .diamond-card .price {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-        
-        .diamond-card .original-price {
-            text-decoration: line-through;
-            color: #777;
-            font-size: 0.9rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--dark), #311B92);
-            color: white;
-            padding: 50px 0 20px;
-            margin-top: 50px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--secondary);
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: #E0E0E0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-column ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .contact-info {
-            margin-bottom: 15px;
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
             display: flex;
             align-items: center;
         }
         
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--secondary);
-            width: 20px;
-        }
-        
-        .whatsapp-btn {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-        
-        .whatsapp-btn i {
+        .btn-whatsapp i {
             margin-right: 8px;
         }
         
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #BDBDBD;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        /* Modal Styles */
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.9), rgba(26, 115, 232, 0.9)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .search-box {
+            max-width: 700px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark-blue);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* Game List */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 3rem;
+        }
+        
+        .game-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .game-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .game-info {
+            padding: 20px;
+        }
+        
+        .game-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+        
+        .game-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-topup {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .method-card {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .method-card:hover {
+            background-color: #e3f2fd;
+            transform: translateY(-5px);
+        }
+        
+        .method-card i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        /* Promo Section */
+        .promo-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .promo-icon {
+            font-size: 4rem;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+        }
+        
+        /* Transaction Section */
+        .transaction-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .transaction-table th, 
+        .transaction-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .transaction-table th {
+            background-color: var(--light-blue);
+            color: var(--white);
+        }
+        
+        .transaction-table tr:hover {
+            background-color: #f5f9ff;
+        }
+        
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status.completed {
+            background-color: #e8f5e9;
+            color: var(--success);
+        }
+        
+        .status.pending {
+            background-color: #fff8e1;
+            color: var(--warning);
+        }
+        
+        .status.failed {
+            background-color: #ffebee;
+            color: var(--danger);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -395,109 +432,95 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0,0,0,0.7);
             z-index: 2000;
-            justify-content: center;
-            align-items: center;
+            overflow: auto;
         }
         
         .modal-content {
-            background-color: var(--background);
-            border-radius: 15px;
+            background-color: var(--white);
+            margin: 5% auto;
             width: 90%;
-            max-width: 500px;
-            padding: 30px;
-            position: relative;
-            animation: modalAppear 0.3s ease;
+            max-width: 600px;
+            border-radius: 10px;
+            animation: modalOpen 0.4s;
         }
         
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes modalOpen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .modal-header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
         
         .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: #777;
         }
         
-        .modal-title {
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .form-group {
             margin-bottom: 20px;
-            color: var(--dark);
-            text-align: center;
         }
         
-        .payment-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .payment-method {
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .payment-method:hover {
-            border-color: var(--primary);
-            transform: scale(1.05);
-        }
-        
-        .payment-method img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-        
-        .btn {
+        .form-group label {
             display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group select {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            border-radius: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
         }
         
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-3px);
+        .btn-submit {
+            background-color: var(--accent-orange);
+            color: var(--white);
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
         }
         
-        /* Responsive Styles */
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
+                text-align: center;
             }
             
-            nav ul {
-                margin: 20px 0;
-                flex-wrap: wrap;
-                justify-content: center;
+            .user-actions {
+                margin-top: 15px;
             }
             
-            nav ul li {
-                margin: 5px;
-            }
-            
-            .services {
-                flex-direction: column;
-                align-items: center;
+            .hero {
+                padding: 3rem 5%;
             }
             
             .hero h1 {
@@ -505,7 +528,7 @@
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -513,280 +536,409 @@
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="container header-container">
+        <div class="header-container">
             <div class="logo">
                 <i class="fas fa-gamepad"></i>
-                <span>GarzVoucher</span>
+                GarzVoucher
             </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-exchange-alt"></i> Transaksi</a></li>
-                    <li><a href="#"><i class="fas fa-tags"></i> Promo</a></li>
-                    <li><a href="#"><i class="fas fa-gift"></i> Hadiahku</a></li>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#transactions">Transaksi</a></li>
+                    <li><a href="#promo">Promo</a></li>
+                    <li><a href="#rewards">Hadiahku</a></li>
                 </ul>
             </nav>
             <div class="user-actions">
-                <button class="login-btn">Masuk</button>
-                <button class="register-btn">Daftar</button>
+                <button class="btn btn-login" id="loginBtn">
+                    <i class="fas fa-user"></i> Login
+                </button>
+                <button class="btn btn-whatsapp" onclick="window.open('https://wa.me/62895402128077', '_blank')">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Top Up Game & Voucher Terpercaya</h1>
-            <p>Layanan top up game tercepat dengan harga termurah. Proses instan dan aman hanya di GarzVoucher!</p>
-            
-            <div class="services">
-                <div class="service-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Top Up Game</h3>
-                    <p>Isi diamond, voucher, dan item game favoritmu</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>Isi Pulsa</h3>
-                    <p>Pulsa & paket data semua operator</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-ticket-alt"></i>
-                    <h3>Voucher Promo</h3>
-                    <p>Voucher diskon dan cashback menarik</p>
-                </div>
-            </div>
+        <h1>Top Up Game & Voucher Lebih Mudah</h1>
+        <p>Top up Diamond, Voucher, dan Item Game favoritmu dengan harga termurah dan proses instan</p>
+        <div class="search-box">
+            <input type="text" placeholder="Cari game atau voucher...">
+            <button><i class="fas fa-search"></i> Cari</button>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main class="container">
-        <!-- Games Section -->
-        <h2 class="section-title">Pilih Game Favoritmu</h2>
-        <div class="games-container">
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/8A2BE2/FFFFFF?text=ML" alt="Mobile Legends">
-                <h3>Mobile Legends</h3>
+    <div class="container">
+        <!-- Game List Section -->
+        <section class="game-section">
+            <h2 class="section-title">Pilih Game Favoritmu</h2>
+            <div class="game-grid">
+                <!-- Game cards will be dynamically generated here -->
             </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/6A1B9A/FFFFFF?text=FF" alt="Free Fire">
-                <h3>Free Fire</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/4A148C/FFFFFF?text=Garena" alt="Garena">
-                <h3>Garena</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/7E57C2/FFFFFF?text=FFMAX" alt="Free Fire MAX">
-                <h3>Free Fire MAX</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/5E35B1/FFFFFF?text=Chamet" alt="Chamet">
-                <h3>Chamet</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/3949AB/FFFFFF?text=Poppo" alt="Poppo Live">
-                <h3>Poppo Live</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/4527A0/FFFFFF?text=ZZZ" alt="Zenless Zone Zero">
-                <h3>Zenless Zone Zero</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/283593/FFFFFF?text=HoK" alt="Honor of Kings">
-                <h3>Honor of Kings</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/1A237E/FFFFFF?text=PUBG" alt="PUBG Mobile">
-                <h3>PUBG Mobile</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/311B92/FFFFFF?text=VAL" alt="VALORANT">
-                <h3>VALORANT</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/8E24AA/FFFFFF?text=CoDM" alt="Call of Duty: Mobile">
-                <h3>Call of Duty: Mobile</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/5E35B1/FFFFFF?text=HAGO" alt="HAGO">
-                <h3>HAGO</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/3949AB/FFFFFF?text=FC" alt="EA SPORTS FC Mobile">
-                <h3>EA SPORTS FC Mobile</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/4527A0/FFFFFF?text=Undawn" alt="Undawn">
-                <h3>Undawn</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/283593/FFFFFF?text=LOL" alt="League of Legends">
-                <h3>League of Legends</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/1A237E/FFFFFF?text=SuperSus" alt="Super Sus">
-                <h3>Super Sus</h3>
-            </div>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/150/311B92/FFFFFF?text=AOV" alt="AOV">
-                <h3>AOV</h3>
-            </div>
-        </div>
+        </section>
 
-        <!-- Free Fire Diamonds -->
-        <div class="diamonds-section">
-            <h2 class="section-title">Diamond Free Fire</h2>
-            <div class="diamonds-container">
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>10 Diamonds</h3>
-                    <div class="price">Rp 1.990</div>
+        <!-- Payment Methods -->
+        <section class="payment-methods">
+            <h2 class="section-title">Metode Pembayaran</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <i class="fab fa-cc-visa"></i>
+                    <h3>VISA</h3>
                 </div>
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>12 Diamonds</h3>
-                    <div class="price">Rp 1.908</div>
+                <div class="method-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>DANA</h3>
                 </div>
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>55 Diamonds</h3>
-                    <div class="price">Rp 12.000</div>
+                <div class="method-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>OVO</h3>
                 </div>
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>70 Diamonds</h3>
-                    <div class="price">Rp 15.917</div>
+                <div class="method-card">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>GOPAY</h3>
                 </div>
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>80 Diamonds</h3>
-                    <div class="price">Rp 12.000</div>
+                <div class="method-card">
+                    <i class="fas fa-store"></i>
+                    <h3>ShopeePay</h3>
                 </div>
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>100 Diamonds</h3>
-                    <div class="price">Rp 15.917</div>
-                </div>
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>120 Diamonds</h3>
-                    <div class="price">Rp 17.789</div>
-                </div>
-                <div class="diamond-card">
-                    <i class="fas fa-gem"></i>
-                    <h3>130 Diamonds</h3>
-                    <div class="price">Rp 19.662</div>
+                <div class="method-card">
+                    <i class="fas fa-university"></i>
+                    <h3>Bank Transfer</h3>
                 </div>
             </div>
-        </div>
-    </main>
+        </section>
+
+        <!-- Promo Section -->
+        <section class="promo-section" id="promo">
+            <div class="promo-icon">
+                <i class="fas fa-tags"></i>
+            </div>
+            <h2>Promo Spesial untuk Kamu!</h2>
+            <p>Maaf, promo belum tersedia saat ini. Nantikan promo menarik segera!</p>
+            <p>Dapatkan notifikasi promo dengan berlangganan newsletter kami.</p>
+        </section>
+
+        <!-- Transaction Section -->
+        <section class="transaction-section" id="transactions">
+            <h2 class="section-title">Riwayat Transaksi</h2>
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>ID Transaksi</th>
+                        <th>Game</th>
+                        <th>Item</th>
+                        <th>Tanggal</th>
+                        <th>Jumlah</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#TRX202307011</td>
+                        <td>Free Fire</td>
+                        <td>Diamond</td>
+                        <td>01 Jul 2023</td>
+                        <td>1.000</td>
+                        <td><span class="status completed">Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td>#TRX202307002</td>
+                        <td>Mobile Legends</td>
+                        <td>Diamond</td>
+                        <td>02 Jul 2023</td>
+                        <td>500</td>
+                        <td><span class="status completed">Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td>#TRX202307015</td>
+                        <td>PUBG Mobile</td>
+                        <td>UC</td>
+                        <td>03 Jul 2023</td>
+                        <td>1.200</td>
+                        <td><span class="status pending">Diproses</span></td>
+                    </tr>
+                    <tr>
+                        <td>#TRX202307022</td>
+                        <td>Valorant</td>
+                        <td>Points</td>
+                        <td>05 Jul 2023</td>
+                        <td>800</td>
+                        <td><span class="status pending">Menunggu Pembayaran</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Kendala atau Pertanyaan?</h3>
+                    <p>Tim support kami siap membantu 24/7</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>garzvoucher@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+62 895-4021-28077</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Jam Operasional</h4>
+                            <p>Setiap Hari, 24 Jam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" rows="4" style="width:100%; padding:12px; border-radius:5px; border:1px solid #ddd;" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>GarzVoucher</h3>
-                    <p>Platform top up game terpercaya dengan harga termurah dan proses instan. Layanan pelanggan 24/7 siap membantu Anda.</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Layanan</h3>
-                    <ul>
-                        <li><a href="#">Top Up Game</a></li>
-                        <li><a href="#">Isi Pulsa</a></li>
-                        <li><a href="#">Voucher Promo</a></li>
-                        <li><a href="#">Program Hadiah</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Hubungi Kami</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>garzvoucher@gmail.com</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <span>+62 895-4021-28077</span>
-                    </div>
-                    <a href="https://wa.me/62895402128077" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Chat via WhatsApp
-                    </a>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Promo</h3>
-                    <p>Promo belum tersedia. Segera hadir promo menarik untuk Anda!</p>
-                </div>
+        <div class="footer-content">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                GarzVoucher
             </div>
-            
+            <div class="footer-links">
+                <a href="#">Tentang Kami</a>
+                <a href="#">Syarat & Ketentuan</a>
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">FAQ</a>
+                <a href="#contact">Kontak</a>
+            </div>
             <div class="copyright">
-                <p>&copy; 2023 GarzVoucher. Hak Cipta Dilindungi.</p>
+                &copy; 2023 GarzVoucher. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Payment Modal -->
-    <div class="modal" id="paymentModal">
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 class="modal-title">Pilih Metode Pembayaran</h2>
-            
-            <div class="payment-methods">
-                <div class="payment-method">
-                    <img src="https://via.placeholder.com/60/25D366/FFFFFF?text=DANA" alt="DANA">
-                    <span>DANA</span>
-                </div>
-                <div class="payment-method">
-                    <img src="https://via.placeholder.com/60/6633CC/FFFFFF?text=OVO" alt="OVO">
-                    <span>OVO</span>
-                </div>
-                <div class="payment-method">
-                    <img src="https://via.placeholder.com/60/00AA13/FFFFFF?text=GOPAY" alt="GOPAY">
-                    <span>GOPAY</span>
-                </div>
-                <div class="payment-method">
-                    <img src="https://via.placeholder.com/60/FF5722/FFFFFF?text=SPAY" alt="ShopeePay">
-                    <span>ShopeePay</span>
+            <div class="modal-header">
+                <h3>Login ke Akun Anda</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username atau Email</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-submit">Login</button>
+                    </div>
+                    <p style="text-align: center; margin-top: 15px;">
+                        Belum punya akun? <a href="#" style="color: var(--primary-blue);">Daftar Sekarang</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Selection Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalGameTitle">Pilih Nominal Top Up</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="gameOptions">
+                    <!-- Game options will be dynamically generated here -->
                 </div>
             </div>
-            
-            <button class="btn">Lanjutkan Pembayaran</button>
         </div>
     </div>
 
     <script>
+        // Game Data
+        const games = [
+            { id: 1, name: "Mobile Legends: Bang Bang", image: "mlbb", packages: [100, 250, 500, 1000, 2000] },
+            { id: 2, name: "Free Fire", image: "ff", packages: [100, 250, 500, 1000, 2000] },
+            { id: 3, name: "Garena", image: "garena", packages: [100, 250, 500, 1000, 2000] },
+            { id: 4, name: "Free Fire MAX", image: "ffmax", packages: [100, 250, 500, 1000, 2000] },
+            { id: 5, name: "Chamet", image: "chamet", packages: [100, 250, 500, 1000, 2000] },
+            { id: 6, name: "Poppo Live", image: "poppo", packages: [100, 250, 500, 1000, 2000] },
+            { id: 7, name: "Zenless Zone Zero", image: "zzz", packages: [100, 250, 500, 1000, 2000] },
+            { id: 8, name: "Honor of Kings", image: "honor", packages: [100, 250, 500, 1000, 2000] },
+            { id: 9, name: "PUBG Mobile", image: "pubg", packages: [100, 250, 500, 1000, 2000] },
+            { id: 10, name: "VALORANT", image: "valorant", packages: [100, 250, 500, 1000, 2000] },
+            { id: 11, name: "Call of Duty: Mobile", image: "codm", packages: [100, 250, 500, 1000, 2000] },
+            { id: 12, name: "HAGO", image: "hago", packages: [100, 250, 500, 1000, 2000] },
+            { id: 13, name: "EA SPORTS FC Mobile", image: "fc", packages: [100, 250, 500, 1000, 2000] },
+            { id: 14, name: "Undawn", image: "undawn", packages: [100, 250, 500, 1000, 2000] },
+            { id: 15, name: "League of Legends", image: "lol", packages: [100, 250, 500, 1000, 2000] },
+            { id: 16, name: "Super Sus", image: "super", packages: [100, 250, 500, 1000, 2000] },
+            { id: 17, name: "AOV", image: "aov", packages: [100, 250, 500, 1000, 2000] }
+        ];
+
+        // Generate game cards
+        const gameGrid = document.querySelector('.game-grid');
+        
+        games.forEach(game => {
+            const gameCard = document.createElement('div');
+            gameCard.className = 'game-card';
+            gameCard.innerHTML = `
+                <div class="game-img" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/600x400/1a73e8/white?text=${game.name.replace(/ /g, '+')}'); background-size: cover; background-position: center;"></div>
+                <div class="game-info">
+                    <h3>${game.name}</h3>
+                    <p>Top up ${game.name} dengan harga termurah dan proses instan</p>
+                    <a href="#" class="btn-topup" data-game="${game.name}" data-id="${game.id}">Beli Sekarang</a>
+                </div>
+            `;
+            gameGrid.appendChild(gameCard);
+        });
+
         // Modal functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('paymentModal');
-            const closeModal = document.querySelector('.close-modal');
-            const diamondCards = document.querySelectorAll('.diamond-card');
+        const loginModal = document.getElementById('loginModal');
+        const gameModal = document.getElementById('gameModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const closeBtns = document.querySelectorAll('.close-modal');
+        const gameOptions = document.getElementById('gameOptions');
+        const modalGameTitle = document.getElementById('modalGameTitle');
+
+        // Open login modal
+        loginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'block';
+        });
+
+        // Close modals
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+                gameModal.style.display = 'none';
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (e.target === gameModal) {
+                gameModal.style.display = 'none';
+            }
+        });
+
+        // Game selection
+        document.querySelectorAll('.btn-topup').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const gameId = button.getAttribute('data-id');
+                const gameName = button.getAttribute('data-game');
+                const game = games.find(g => g.id == gameId);
+                
+                modalGameTitle.textContent = `Top Up ${gameName}`;
+                gameOptions.innerHTML = '';
+                
+                game.packages.forEach(pack => {
+                    const price = pack * 1000; // Assuming 1000 IDR per unit
+                    const option = document.createElement('div');
+                    option.className = 'game-option';
+                    option.innerHTML = `
+                        <div class="form-group" style="margin-bottom: 15px; cursor: pointer; padding: 15px; border: 1px solid #ddd; border-radius: 8px; transition: all 0.3s;">
+                            <input type="radio" name="gamePackage" id="package${pack}" value="${pack}" style="display: none;">
+                            <label for="package${pack}" style="display: block; cursor: pointer; font-weight: 500; margin-bottom: 5px;">
+                                ${pack} Diamond
+                            </label>
+                            <p style="color: var(--primary-blue); font-weight: 600; margin-top: 5px;">
+                                Rp ${price.toLocaleString('id-ID')}
+                            </p>
+                        </div>
+                    `;
+                    gameOptions.appendChild(option);
+                    
+                    // Add event to show payment options
+                    option.addEventListener('click', () => {
+                        showPaymentOptions(gameName, pack, price);
+                    });
+                });
+                
+                gameModal.style.display = 'block';
+            });
+        });
+
+        // Show payment options
+        function showPaymentOptions(gameName, packageSize, price) {
+            gameOptions.innerHTML = `
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h3>${packageSize} ${gameName} Diamond</h3>
+                    <p style="font-size: 1.2rem; color: var(--primary-blue); font-weight: 600;">
+                        Rp ${price.toLocaleString('id-ID')}
+                    </p>
+                </div>
+                <h4 style="margin-bottom: 15px;">Pilih Metode Pembayaran:</h4>
+                <div class="methods-grid">
+                    <div class="method-card" data-method="dana">
+                        <i class="fas fa-wallet"></i>
+                        <h3>DANA</h3>
+                    </div>
+                    <div class="method-card" data-method="ovo">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>OVO</h3>
+                    </div>
+                    <div class="method-card" data-method="gopay">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>GOPAY</h3>
+                    </div>
+                    <div class="method-card" data-method="shopeepay">
+                        <i class="fas fa-store"></i>
+                        <h3>ShopeePay</h3>
+                    </div>
+                </div>
+            `;
             
-            // Open modal when diamond card is clicked
-            diamondCards.forEach(card => {
+            // Add payment method selection
+            document.querySelectorAll('.method-card').forEach(card => {
                 card.addEventListener('click', () => {
-                    modal.style.display = 'flex';
+                    const method = card.getAttribute('data-method');
+                    alert(`Anda memilih pembayaran ${method.toUpperCase()} untuk ${packageSize} Diamond ${gameName} seharga Rp ${price.toLocaleString('id-ID')}. Transaksi Anda sedang diproses!`);
+                    gameModal.style.display = 'none';
                 });
             });
-            
-            // Close modal
-            closeModal.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-            
-            // Close modal when clicking outside
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            // Register button functionality
-            document.querySelector('.register-btn').addEventListener('click', () => {
-                alert('Fitur pendaftaran akun GarzVoucher akan segera tersedia!');
-            });
+        }
+
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Login berhasil! Selamat datang di GarzVoucher.');
+            loginModal.style.display = 'none';
         });
     </script>
 </body>

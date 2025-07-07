@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GarzVoucher - Topup Game & Voucher</title>
+    <title>GarzVoucher - Top Up Game & Voucher Termurah</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
             background: linear-gradient(135deg, #0a1f44 0%, #1a3a7a 100%);
             color: #fff;
             min-height: 100vh;
-            padding: 20px;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
         
-        /* Header Styles */
+        /* Header Styles Codashop Inspired */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            margin-bottom: 30px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 10px;
         }
         
         .logo {
@@ -139,16 +140,35 @@
             box-shadow: 0 6px 20px rgba(0, 120, 255, 0.4);
         }
         
-        /* Hero Section */
+        /* Hero Section Codashop Style */
         .hero {
             display: flex;
             align-items: center;
             gap: 50px;
-            margin-bottom: 60px;
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 168, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
         }
         
         .hero-content {
             flex: 1;
+            z-index: 1;
         }
         
         .hero h2 {
@@ -166,6 +186,7 @@
             color: #c1daff;
             margin-bottom: 30px;
             line-height: 1.6;
+            max-width: 600px;
         }
         
         .hero-buttons {
@@ -179,6 +200,10 @@
             padding: 14px 30px;
             font-size: 18px;
             box-shadow: 0 4px 15px rgba(0, 120, 255, 0.3);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .btn-primary:hover {
@@ -186,59 +211,21 @@
             box-shadow: 0 6px 20px rgba(0, 120, 255, 0.4);
         }
         
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 14px 30px;
-            font-size: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
         .hero-image {
             flex: 1;
             display: flex;
             justify-content: center;
-        }
-        
-        .hero-image-placeholder {
-            width: 100%;
-            max-width: 500px;
-            height: 350px;
-            background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(0, 168, 255, 0.2));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-image-placeholder::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(0, 168, 255, 0.1) 0%, transparent 70%);
-            animation: rotate 15s linear infinite;
-        }
-        
-        .hero-image-placeholder i {
-            font-size: 100px;
-            color: rgba(255, 255, 255, 0.1);
             z-index: 1;
         }
         
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        /* Games Section */
+        /* Games Section Codashop Style */
         .section-title {
             text-align: center;
             margin-bottom: 40px;
@@ -276,11 +263,12 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .game-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             border-color: rgba(0, 168, 255, 0.5);
         }
         
@@ -301,6 +289,7 @@
         .game-info h3 {
             margin-bottom: 10px;
             font-size: 20px;
+            color: white;
         }
         
         .game-info p {
@@ -336,9 +325,10 @@
         
         .btn-buy:hover {
             transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 120, 255, 0.3);
         }
         
-        /* Topup Form */
+        /* Topup Form Codashop Style */
         .topup-section {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -346,6 +336,7 @@
             padding: 40px;
             margin-bottom: 60px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .form-container {
@@ -400,6 +391,7 @@
         .form-group input:focus {
             outline: none;
             border-color: #00a8ff;
+            box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.2);
         }
         
         .btn-submit {
@@ -437,12 +429,14 @@
             padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
             background: rgba(0, 123, 255, 0.1);
             border-color: rgba(0, 168, 255, 0.5);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
         .feature-icon {
@@ -460,6 +454,7 @@
         .feature-card h3 {
             font-size: 22px;
             margin-bottom: 15px;
+            color: white;
         }
         
         .feature-card p {
@@ -467,11 +462,12 @@
             line-height: 1.6;
         }
         
-        /* Footer */
+        /* Footer Codashop Style */
         footer {
-            padding: 40px 0 20px;
+            padding: 60px 0 20px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
         }
         
         .footer-content {
@@ -506,6 +502,9 @@
             color: #a0d2ff;
             text-decoration: none;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .footer-column ul li a:hover {
@@ -541,6 +540,26 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        /* Payment Methods */
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .payment-method {
+            width: 60px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero {
@@ -550,6 +569,12 @@
             
             .hero-buttons {
                 justify-content: center;
+            }
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
         }
         
@@ -567,6 +592,21 @@
                 display: block;
                 font-size: 24px;
             }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-column {
+                text-align: center;
+                align-items: center;
+            }
+            
+            .footer-column ul li a {
+                justify-content: center;
+            }
         }
         
         @media (max-width: 576px) {
@@ -580,6 +620,10 @@
             
             .btn {
                 width: 100%;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
             }
         }
     </style>
@@ -619,13 +663,11 @@
                 <p>Dapatkan diamond, koin, dan voucher game favoritmu dengan harga terbaik. Proses cepat dan aman hanya di GarzVoucher. Dukungan 24/7 untuk semua transaksi Anda.</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary"><i class="fas fa-bolt"></i> Top Up Sekarang</button>
-                    <button class="btn btn-secondary"><i class="fas fa-gift"></i> Lihat Promo</button>
+                    <button class="btn btn-primary"><i class="fas fa-gift"></i> Lihat Promo</button>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="hero-image-placeholder">
-                    <i class="fas fa-coins"></i>
-                </div>
+                <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=600&auto=format&fit=crop" alt="Top Up Game">
             </div>
         </section>
         
@@ -758,6 +800,16 @@
             </div>
         </section>
         
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <div class="payment-method"><i class="fab fa-cc-visa"></i></div>
+            <div class="payment-method"><i class="fab fa-cc-mastercard"></i></div>
+            <div class="payment-method"><i class="fab fa-paypal"></i></div>
+            <div class="payment-method"><i class="fab fa-google-pay"></i></div>
+            <div class="payment-method"><i class="fab fa-apple-pay"></i></div>
+            <div class="payment-method"><i class="fas fa-university"></i></div>
+        </div>
+        
         <!-- Features Section -->
         <section class="features">
             <div class="feature-card">
@@ -824,9 +876,9 @@
                 <div class="footer-column">
                     <h4>Kontak</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> cs@garzvoucher.com</li>
-                        <li><i class="fab fa-whatsapp"></i> +62 812 3456 7890</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> cs@garzvoucher.com</a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i> +62 812 3456 7890</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</a></li>
                     </ul>
                 </div>
             </div>
